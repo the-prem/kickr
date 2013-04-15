@@ -1,4 +1,7 @@
 Kickr::Application.routes.draw do
+  resources :targets
+
+
   devise_for :users
 
   get "home/index"
