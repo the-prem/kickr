@@ -14,6 +14,7 @@ class TargetsController < ApplicationController
   # GET /targets/1.json
   def show
     @target = Target.find(params[:id])
+    @bids = Bid.where("target_id =?", params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
