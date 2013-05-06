@@ -15,6 +15,7 @@ class TargetsController < ApplicationController
   def show
     @target = Target.find(params[:id])
     @bids = Bid.where("target_id =?", params[:id])
+    @bid = Bid.new
 
     respond_to do |format|
       format.html # show.html.erb
@@ -81,4 +82,27 @@ class TargetsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  ##############################################################################
+  ##   BIDS
+  ##############################################################################
+  # create bid: POST /targets/1
+  def create_bid
+    @target = Target.find(params[:id])
+    @biddata = params[:bid]
+    
+    @bid = Bid.new(:user_id => current_user[:id], :target_id => params[:id], :action => @biddata[:action], :price => @biddata[:price])  
+
+    respond_to do |format|
+      format.html # show.html.erb
+
+      if @bid.save
+        format.html { redirect_to @target, notice: 'Bid was successfully created.' }
+      else
+        format.html { redirect_to @target, notice: 'Bid could not be created.' }
+      end
+
+    end
+  end
+
 end
