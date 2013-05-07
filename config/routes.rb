@@ -1,6 +1,7 @@
 Kickr::Application.routes.draw do
-  resources :targets
-
+  resources :targets do
+    post 'create_bid', :on => :member
+  end
 
   devise_for :users
 
@@ -63,5 +64,4 @@ Kickr::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  match 'targets/:id/' => 'targets#create_bid', :via =>[:post]
 end
