@@ -11,3 +11,47 @@
  *= require_self
  *= require_tree .
  */
+
+ .header {
+ 	display: block;
+ 	background-color:#474747;
+	height: 38px;
+	width: 100%;
+	top: 0;
+	left: 0;
+
+	a {
+		text-decoration: none;
+	}
+
+	.logo {
+		display: block;
+		height: 38px;
+		width: 150px;
+		margin: 0;
+		text-align: center;
+		vertical-align: center;
+	}
+
+	.logo-text-wrapper {
+		display: block;
+		padding-top: 10px;
+	}
+
+	.logo-text {
+		color: #99ff66;
+		font-weight: bold;
+		font-size: 24px;
+		margin: 0;
+	}
+
+	.logo-text:hover {
+		color: #66ff1a;
+	}
+ }
+
+ body {
+ 	margin: 0;
+ }
+
+
