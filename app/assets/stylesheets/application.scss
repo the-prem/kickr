@@ -22,6 +22,8 @@
 
 	a {
 		text-decoration: none;
+		position: relative;
+		float: left;
 	}
 
 	.logo {
@@ -47,6 +49,21 @@
 
 	.logo-text:hover {
 		color: #66ff1a;
+	}
+
+	.login-info {
+		height: 38px;
+		display: block;
+	 	position: relative;
+	 	float: right;
+
+	 	.logged-in-text {
+	 		padding-top: 9px;
+	 		padding-right: 9px;
+	 		margin: 0;
+	 		color: #acacac;
+	 	}
+
 	}
  }
 

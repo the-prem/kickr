@@ -16,6 +16,14 @@
 		    	</div>
 		    </div>
 		</a>
+
+		<div class="login-info">
+			<% if user_signed_in? %>
+				<p class="logged-in-text"> Welcome, <%= current_user.username %></p>
+			<% else %>
+				COMING SOON, LOGGING IN HERE!
+			<% end %>
+		</div>
 	</div>
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
