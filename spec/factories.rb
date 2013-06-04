@@ -5,4 +5,11 @@ FactoryGirl.define do
     password 'test1234'
     password_confirmation { 'test1234' }
   end
+
+  factory :target do
+    sequence(:name) {|n| "oprah#{n}" }
+    desc 'fatass'
+    creator_id 1
+    status 1
+  end
 end
