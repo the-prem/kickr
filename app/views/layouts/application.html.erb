@@ -22,13 +22,13 @@
 				<p class="logged-in-text"> Welcome, <%= current_user.username %></p>
 			<% else %>
 				<%= form_for("user", :url => user_session_path) do |f| %>
-				<p>
-					<%= f.text_field :email, :placeholder => 'Username',  :size => 10 %>
-					<%= f.password_field :password,  :placeholder => 'Password',  :size => 10 %>
+				<p class="login-form">
+					<%= f.text_field :email, :placeholder => 'Username',  :size => 10, :class => 'input' %>
+					<%= f.password_field :password,  :placeholder => 'Password',  :size => 10, :class => 'input' %>
 					<%= f.check_box :remember_me %>
 					<%= f.label :remember_me %>
 					<%= f.submit 'Sign in' %>
-					<%= link_to "Forgot your password?", new_password_path('user') %>
+					<%= link_to "Forgot your password?", new_password_path('user'), :id => 'forgot-your-password' %>
 				</p>
 				<% end %>
 			<% end %>
