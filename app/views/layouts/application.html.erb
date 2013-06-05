@@ -25,10 +25,10 @@
 				<p class="login-form">
 					<%= f.text_field :email, :placeholder => 'Username',  :size => 10, :class => 'input' %>
 					<%= f.password_field :password,  :placeholder => 'Password',  :size => 10, :class => 'input' %>
-					<%= f.check_box :remember_me %>
-					<%= f.label :remember_me %>
 					<%= f.submit 'Sign in' %>
-					<%= link_to "Forgot your password?", new_password_path('user'), :id => 'forgot-your-password' %>
+					<%= f.check_box :remember_me %>
+					<%= f.label :remember_me, :class => 'login-texts'%>
+					<!--<%= link_to "Forgot your password?", new_password_path('user'), :class => 'login-texts' %>-->
 				</p>
 				<% end %>
 			<% end %>
